@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.oliverworks.weathercompose.ui.components.WeatherButton
 import com.oliverworks.weathercompose.ui.components.WeatherTextField
 import com.oliverworks.weathercompose.ui.util.Screen
 
@@ -35,21 +36,7 @@ fun ChooseCityScreen(navController: NavController) {
         })
 
         Spacer(modifier = Modifier.height(16.dp))
-        // TODO Make it comp
-        Button(
-            onClick = {
-                if (cityName.isNotBlank()) {
-                    navController.navigate(Screen.WeatherScreen.route + cityName)
-                }
-            },
-            colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.secondary),
-            shape = RoundedCornerShape(8.dp),
-            modifier = Modifier.fillMaxWidth()
-        ) {
 
-            Text(text = "Click to find out")
-
-        }
-
+        WeatherButton(cityName,navController)
     }
 }

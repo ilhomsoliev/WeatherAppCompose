@@ -83,7 +83,7 @@ fun WeatherScreen(city: String, viewModel: WeatherViewModel = hiltViewModel()) {
             }
             Status.ERROR -> {
                 Text(
-                    text = viewModel.cityWeather.value.message ?: "An unknown error occurred!",
+                    text = viewModel.cityWeather.value.message ?: "An unknown error occurredв!",
                     fontSize = 16.sp
                 )
             }
